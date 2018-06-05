@@ -26,10 +26,14 @@ execute 'untar_tomcat_bin' do
 	not_if { File.exists?("/opt/tomcat/Running.txt") }
 end
 
-directory '/opt/tomcat' do
+
+execute 'chgrp_recusrive_tomcat' do
+	command 'chgrp -R tomcat /opt/tompcat'
+end
+
+directory '/opt/tomcat/bin' do
 	group 'tomcat'
 	recursive true
-end
 
 directory '/opt/tomcat/webapps' do
 	owner 'tomcat'
