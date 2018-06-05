@@ -28,7 +28,7 @@ end
 
 
 execute 'chgrp_recusrive_tomcat' do
-	command 'chgrp -R tomcat /opt/tompcat'
+	command 'chgrp -R tomcat /opt/tomcat'
 end
 
 directory '/opt/tomcat/webapps' do
