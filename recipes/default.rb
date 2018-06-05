@@ -11,7 +11,7 @@ group 'tomcat'
 user 'tomcat' do
 	shell '/sbin/nologin'
 	manage_home false
-	git 'tomcat'
+	gid 'tomcat'
 	home '/opt/tompcat'
 end
 
