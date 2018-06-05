@@ -31,10 +31,6 @@ execute 'chgrp_recusrive_tomcat' do
 	command 'chgrp -R tomcat /opt/tompcat'
 end
 
-directory '/opt/tomcat/bin' do
-	group 'tomcat'
-	recursive true
-
 directory '/opt/tomcat/webapps' do
 	owner 'tomcat'
 	recursive true
