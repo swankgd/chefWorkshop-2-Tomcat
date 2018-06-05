@@ -18,3 +18,9 @@ end
 remote_file '/tmp/apache-tomcat-8.5.31.tar.gz' do
 	source 'https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31.tar.gz'
 end
+
+directory '/opt/tomcat'
+
+execute 'untar_tomcat_bin' do
+	command 'tar xvf /tmp/apache-tomcat-8.5.31.tar.gz -C /opt/tomcat --strip-components=1'
+end
