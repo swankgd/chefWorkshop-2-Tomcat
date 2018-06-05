@@ -60,7 +60,7 @@ execute 'add_group_execute_conf' do
 end
 
 file '/etc/systemd/system/tomcat.service' do
-	content '# Systemd unit file for tomcat
+	content "# Systemd unit file for tomcat
 [Unit]
 Description=Apache Tomcat Web Application Container
 After=syslog.target network.target
@@ -85,7 +85,7 @@ RestartSec=10
 Restart=always
 
 [Install]
-WantedBy=multi-user.target'
+WantedBy=multi-user.target"
 end
 
 execute 'systemd_reload' do
