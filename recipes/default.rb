@@ -15,3 +15,6 @@ user 'tomcat' do
 	home '/opt/tompcat'
 end
 
+remote_file '/tmp/apache-tomcat-8.5.31.tar.gz' do
+	source 'https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31.tar.gz'
+end
