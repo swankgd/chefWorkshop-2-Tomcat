@@ -25,3 +25,36 @@ execute 'untar_tomcat_bin' do
 	command 'tar xvf /tmp/apache-tomcat-8.5.31.tar.gz -C /opt/tomcat --strip-components=1'
 	not_if { File.exists?("/opt/tomcat/Running.txt") }
 end
+
+directory '/opt/tomcat' do
+	group 'tomcat'
+	recursive true
+end
+
+directory 'opt/tomcat/webapps' do
+	owner 'tomcat'
+	recursive true
+end
+
+directory 'opt/tomcat/work' do
+	owner 'tomcat'
+	recursive true
+end
+
+directory 'opt/tomcat/temp' do
+	owner 'tomcat'
+	recursive true
+end
+
+directory 'opt/tomcat/logs' do
+	owner 'tomcat'
+	recursive true
+end
+
+execute 'add_group_read_conf' do
+	command 'chmod -R g+r conf'
+end
+
+execute 'add_group_execute_conf' do
+	command 'chmod g+x conf'
+end
