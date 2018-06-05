@@ -87,3 +87,11 @@ Restart=always
 [Install]
 WantedBy=multi-user.target'
 end
+
+execute 'systemd_reload' do
+	command 'systemctl daemon-reload'
+end
+
+service 'tomcat' do
+	action [:enable, :start]
+end
