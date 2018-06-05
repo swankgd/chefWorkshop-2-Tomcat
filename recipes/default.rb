@@ -23,4 +23,5 @@ directory '/opt/tomcat'
 
 execute 'untar_tomcat_bin' do
 	command 'tar xvf /tmp/apache-tomcat-8.5.31.tar.gz -C /opt/tomcat --strip-components=1'
+	not_if { File.exists?("/opt/tomcat/Running.txt") }
 end
