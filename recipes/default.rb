@@ -31,30 +31,30 @@ directory '/opt/tomcat' do
 	recursive true
 end
 
-directory 'opt/tomcat/webapps' do
+directory '/opt/tomcat/webapps' do
 	owner 'tomcat'
 	recursive true
 end
 
-directory 'opt/tomcat/work' do
+directory '/opt/tomcat/work' do
 	owner 'tomcat'
 	recursive true
 end
 
-directory 'opt/tomcat/temp' do
+directory '/opt/tomcat/temp' do
 	owner 'tomcat'
 	recursive true
 end
 
-directory 'opt/tomcat/logs' do
+directory '/opt/tomcat/logs' do
 	owner 'tomcat'
 	recursive true
 end
 
 execute 'add_group_read_conf' do
-	command 'chmod -R g+r conf'
+	command 'chmod -R g+r /opt/tomcat/conf'
 end
 
 execute 'add_group_execute_conf' do
-	command 'chmod g+x conf'
+	command 'chmod g+x /opt/tomcat/conf'
 end
